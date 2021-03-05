@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function validate() {
+          var y = document.forms["myForm"]["type"].value;
+          if(y == ""){
+              alert("type must be filled out");
+            return false;
+    
+          }
+          var z = document.forms["myForm"]["department"].value;
+          if(z == ""){
+            alert("department must be filled out");
+            return false;
+          }
+          var z = document.forms["myForm"]["country"].value;
+          if(z == ""){
+            alert("country must be filled out");
+            return false;
+          }
+          var z = document.forms["myForm"]["description"].value;
+          if(z == ""){
+            alert("discription must be filled out");
+            return false;
+          }
+          var z = document.forms["myForm"]["opening date"].value;
+          if(z == ""){
+            alert("opening date must be filled out");
+            return false;
+          }
+            var date = document.getElementById("demo").value;
+            var varDate = new Date(date); //dd-mm-YYYY
+            var today = new Date();
+            
+            if(varDate >= today) {
+            //Do something..
+            alert("Please enter valid date and not greater than current date");
+            return false;
+              }
+}
+  </script>
+    <title>Enter Job Data</title>
+    <link rel="stylesheet" href="job.css">
+</head>
+<h1 style="text-align: center;"> Enter Job Data</h1>
+<body style="background-image: url('create.jpg');background-position:left;background-size:cover;height: 100vh">
+    <form name="myForm" action="submit.html" onsubmit="return validate()" method="post">
+<label for="type">Type</label>
+    <select id="type" name="type">
+        <option value="PAT">Programmer Analyst</option>
+        <option value="ASE">Associate Software Engineer</option>
+        <option value="SD">Software Developer</option>
+        <option value="PM">Project Manger</option>
+        <option value="SSE">Software Engineer</option>
+        <option value="UK">Sr.Software Programmer</option>
+ </select><br><br>
+ <label for="department">Department</label>
+    <select id="department" name="department">
+        <option value="product development">Product Development</option>
+        <option value="HR">HR</option>
+        <option value="infrastructures">Infrasturctures</option>
+        <option value="Research and development"> Research And Development</option>
+        <option value="IT services">IT Services</option>
+        <option value="admin department">Admin department</option>
+ </select><br><br>
+ <label for="country">Country</label>
+    <select id="country" name="country">
+        <option value="india">India</option>
+    <option value="china">China</option>
+    <option value="nepal">Nepal</option>
+    <option value="usa">USA</option>
+    <option value="austrlia">Australia</option>
+    <option value="uk">UK</option>
+    </select><br><br>
+ <label for="description">Description</label>
+ <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+ <label for="opening date">Opening Date</label>
+ <input type="date" id="demo" name="opening date"><br><br>
+ <input type="submit" value="submit">
+ </form>
+</body>
+</html>
